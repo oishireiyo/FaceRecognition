@@ -235,9 +235,9 @@ class SpeakerDetection(object):
 if __name__ == '__main__':
     start_time = time.time()
 
-    inputvideoname = 'UniqueSamples/Solokatsu/solokatsu_conversation.mp4'
-    outputvideoname = 'Outputs/Solokatsu/processed_solokatsu_conversation.mp4'
-    outputjsonname = 'Outputs/Solokatsu/processed_solokatsu_conversation.json'
+    inputvideoname = '../Inputs/Solokatsu.mp4'
+    outputvideoname = '../Outputs/Solokatsu.mp4'
+    outputjsonname = '../Outputs/Solokatsu.json'
     Speaker = SpeakerDetection(inputvideo=inputvideoname, outputvideo=outputvideoname,
                                outputjson=outputjsonname, videoGen=True, MLtype='cnn')
     Speaker.AppendKnownPerson(images=['UniqueSamples/Solokatsu/EguchiNoriko/EguchiNoriko0.jpg',
