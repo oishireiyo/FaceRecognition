@@ -13,7 +13,7 @@ CUDAを有効にした状態でdlibをビルドする必要がある。
 pipでdlibをインストールしていたら競合する可能性があるので、`pip uninstall dlib`でdlibをuninstallしてからビルドする必要がある。
 ビルド手順は以下の通り。
 ```bash
-lude
+export CUDNN_INCLUDE_DIR=/usr/local/cuda/include
 export CMAKE_PREFIX_PATH=/usr/local/cuda/lib64:$CMAKE_PREFIX_PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
