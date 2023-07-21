@@ -73,7 +73,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 ```
 
 ### 再度dlibのビルド。
-再度dlibのビルドを行う。
+再度dlibのビルドを行う。以下が表示されたら成功。
 ``` 
 -- Found CUDA: /usr (found suitable version "10.1", minimum required is "7.5") 
 -- Looking for cuDNN install...
