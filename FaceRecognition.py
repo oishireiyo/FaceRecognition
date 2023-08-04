@@ -235,8 +235,8 @@ class SpeakerDetection(object):
 if __name__ == '__main__':
     start_time = time.time()
 
-    inputvideoname = '../Inputs/Solokatsu.mp4'
-    outputvideoname = '../Outputs/Solokatsu.mp4'
+    inputvideoname = '../Inputs/Videos/Solokatsu.mp4'
+    outputvideoname = '../Outputs/Videos/Solokatsu.mp4'
     outputjsonname = '../Outputs/Solokatsu.json'
     Speaker = SpeakerDetection(inputvideo=inputvideoname, outputvideo=outputvideoname,
                                outputjson=outputjsonname, videoGen=True, MLtype='cnn')
