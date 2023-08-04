@@ -1,5 +1,5 @@
 # dlibを通してCUDAが使えない。
-`face_recognition`ライブラリを使う際、正しくビルドしないとGPUを認識してくれない。
+`face_recognition`ライブラリを使う際、正しくビルドしないとGPUを認識してくれない。(おそらく、`conda install face_recognition`を実行するとデフォルトでCUDA disableのdlibがインストールされる？)
 このライブラリは`dlib`をベースにしているため、`dlib`のCUDAサポートがないとCUDAを直接使用することができない。
 
 以下のコマンドでCUDAが有効になっているか確認できる。
@@ -13,11 +13,11 @@ CUDAを有効にした状態でdlibをビルドする必要がある。
 pipでdlibをインストールしていたら競合する可能性があるので、`pip uninstall dlib`でdlibをuninstallしてからビルドする必要がある。
 ビルド手順は以下の通り。
 ```bash
-export CUDNN_INCLUDE_DIR=/usr/local/cuda/include
-export CMAKE_PREFIX_PATH=/usr/local/cuda/lib64:$CMAKE_PREFIX_PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export CUDNN_INCLUDE_DIR=/usr/local/cuda-XX.X/include
+export CMAKE_PREFIX_PATH=/usr/local/cuda-XX.X/lib64:$CMAKE_PREFIX_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-XX.X/lib64:$LD_LIBRARY_PATH
 
-conda activate subtitle
+conda activate your_env
 
 git clone https://github.com/davisking/dlib.git
 
@@ -35,7 +35,7 @@ cd ..
 python setup.py install
 
 # CUDAが有効か確認
-python -c "import dlib; print(dlib.DLIB_USE_CUDA)"~
+python -c "import dlib; print(dlib.DLIB_USE_CUDA)"
 ```
 
 ## cuDNNがインストールされていない場合。
