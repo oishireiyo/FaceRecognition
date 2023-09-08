@@ -57,6 +57,20 @@ class FaceLandmarks3D(object):
         face_landmarks = self.get_landmarks()
         print(face_landmarks)
 
+        cv2.drawMarker(self.input_image, face_landmarks[0]['chin'][0], (0, 255, 255)) # 右耳の付け根
+        cv2.drawMarker(self.input_image, face_landmarks[0]['chin'][8], (0, 255, 255)) # 顎下
+        cv2.drawMarker(self.input_image, face_landmarks[0]['chin'][16], (0, 255, 255)) # 左耳の付け根
+
+        cv2.drawMarker(self.input_image, face_landmarks[0]['left_eye'][0], (255, 255, 0)) # 右目の右端
+        cv2.drawMarker(self.input_image, face_landmarks[0]['right_eye'][3], (255, 255, 0)) # 左目の左端
+
+        cv2.drawMarker(self.input_image, face_landmarks[0]['nose_bridge'][0], (0, 0, 255)) # 鼻の付け根
+        cv2.drawMarker(self.input_image, face_landmarks[0]['nose_bridge'][3], (0, 0, 255)) # 鼻先
+
+        cv2.drawMarker(self.input_image, face_landmarks[0]['top_lip'][0], (255, 0, 0)) # 口の右端
+        cv2.drawMarker(self.input_image, face_landmarks[0]['bottom_lip'][0], (255, 0, 0)) # 口の左端
+
+        cv2.imwrite('hoge.png', self.input_image)
 
 if __name__ == '__main__':
     start_time = time.time()
